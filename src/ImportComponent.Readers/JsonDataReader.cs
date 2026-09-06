@@ -65,7 +65,7 @@ public sealed class JsonDataReader : IDataReader
         using var buffer = new MemoryStream();
         source.CopyTo(buffer);
         var jsonBytes = buffer.ToArray();
-        var arrayPropertyName = string.IsNullOrempty(options.EntityName) || options.EntityName == "default" ? null : options.EntityName;
+        var arrayPropertyName = string.IsNullOrEmpty(options.EntityName) || options.EntityName == "default" ? null : options.EntityName;
         return ReadRecords(jsonBytes, arrayPropertyName);
     }
     private static List<Record> ReadRecords(byte[] jsonBytes, string? arrayPropertyName)

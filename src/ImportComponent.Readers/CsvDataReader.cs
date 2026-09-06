@@ -78,7 +78,7 @@ public sealed class CsvDataReader : IDataReader
         var record = new Record();
         for (var i = 0; i < fieldNames.Count; i++)
         {
-            record.[fieldNames[i]] = csv.GetField(i);
+            record[fieldNames[i]] = csv.GetField(i);
         }
         return record;
     }

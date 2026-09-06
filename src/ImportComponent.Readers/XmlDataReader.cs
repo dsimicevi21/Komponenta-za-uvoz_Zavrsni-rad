@@ -72,7 +72,7 @@ public sealed class XmlDataReader : IDataReader
         var containerName = entityName ?? DetectDefaultContainerName(xmlBytes);
 
         using var stream = new MemoryStream(xmlBytes);
-        using var reader = XmlReader.Create(stream, XmlReaderSettings());
+        using var reader = XmlReader.Create(stream, ReaderSettings());
 
         reader.MoveToContent();
         if (reader.NodeType != XmlNodeType.Element)

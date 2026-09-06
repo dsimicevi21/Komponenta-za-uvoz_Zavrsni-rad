@@ -47,7 +47,7 @@ public sealed class RecordValidator
         {
             case "integer":
             case "smallint":
-                if ((int.TryParse(text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var intValue))
+                if (int.TryParse(text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var intValue))
                 {
                     coercedValue = intValue;
                     return true;

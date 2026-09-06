@@ -9,11 +9,10 @@ namespace ImportComponent.BLL;
 
 public sealed class ValidationResult
 {
-    public bool Isvalid { get; private init; }
+    public bool IsValid { get; private init; }
     public string? RejectionReason { get; private init; }
     public Record? Record { get; private init; }
 
-    public static ValidationResult Valid(Record record) => new() {  Isvalid = true , Record = record };
-
-    public static ValidationResult Invalid(string reason) => new() { Isvalid = false , RejectionReason = reason };
+    public static ValidationResult Valid(Record record) => new() {  IsValid = true , Record = record };
+    public static ValidationResult Invalid(string reason) => new() { IsValid = false , RejectionReason = reason };
 }

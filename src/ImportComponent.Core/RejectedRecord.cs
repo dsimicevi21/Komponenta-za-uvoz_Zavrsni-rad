@@ -8,6 +8,6 @@ namespace ImportComponent.Core;
 
 public sealed class RejectedRecord
 {
-    public required Record record { get; init; }
+    public required Record Record { get; init; }
     public required string Reason { get; init; }
 }
