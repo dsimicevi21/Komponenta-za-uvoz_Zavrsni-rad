@@ -48,6 +48,12 @@ internal static class DevResetService
                 ('Ivan', 'Ivanović', 'ivan.ivanovic@example.com', 2),
                 ('Luka', 'Lukić', 'luka.lukic@example.com', 3)
                 """,
+            "knjige" => """
+                INSERT INTO "knjige" (isbn, naziv, cijena, dostupna, zanr) VALUES
+                ('978-953-0-30001-1', 'Na Drini ćuprija', 24.99, true, 'Roman'),
+                ('978-953-0-30002-2', 'Alkemičar', 18.50, true, 'Roman'),
+                ('978-953-0-30003-3', 'Kratka povijest vremena', 32.00, false, 'Znanost')
+                """,
             _ => null,
         };
 
@@ -85,6 +91,24 @@ internal static class DevResetService
                 {
                     { "first_name", "Luka" }, { "last_name", "Lukić" },
                     { "email", "luka.lukic@example.com" }, { "year", 3 },
+                },
+            },
+            "knjige" => new[]
+            {
+                new BsonDocument
+                {
+                    { "isbn", "978-953-0-30001-1" }, { "naziv", "Na Drini ćuprija" },
+                    { "cijena", 24.99 }, { "dostupna", true }, { "zanr", "Roman" },
+                },
+                new BsonDocument
+                {
+                    { "isbn", "978-953-0-30002-2" }, { "naziv", "Alkemičar" },
+                    { "cijena", 18.50 }, { "dostupna", true }, { "zanr", "Roman" },
+                },
+                new BsonDocument
+                {
+                    { "isbn", "978-953-0-30003-3" }, { "naziv", "Kratka povijest vremena" },
+                    { "cijena", 32.00 }, { "dostupna", false }, { "zanr", "Znanost" },
                 },
             },
             _ => Array.Empty<BsonDocument>(),

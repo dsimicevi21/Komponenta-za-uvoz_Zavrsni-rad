@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <students>
+    <student>
+      <first_name>Ana</first_name>
+      <last_name>Anić</last_name>
+      <email>ana.anic@example.com</email>
+      <year>1</year>
+    </student>
+    <student>
+      <first_name>Marko</first_name>
+      <last_name>Marković</last_name>
+      <email>marko.markovic@example.com</email>
+      <year>2</year>
+    </student>
+    <student>
+      <first_name>Iva</first_name>
+      <last_name>Ivić</last_name>
+      <email>iva.ivic@example.com</email>
+      <year>3</year>
+    </student>
+  </students>
+  <courses>
+    <course>
+      <code>UP1</code>
+      <title>Uvod u programiranje</title>
+      <ects>6</ects>
+    </course>
+    <course>
+      <code>BP2</code>
+      <title>Baze podataka</title>
+      <ects>5</ects>
+    </course>
+  </courses>
+</data>

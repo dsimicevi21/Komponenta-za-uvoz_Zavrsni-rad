@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS knjige (
+    id SERIAL PRIMARY KEY,
+    isbn TEXT NOT NULL,
+    naziv TEXT NOT NULL,
+    cijena NUMERIC(10, 2) NOT NULL,
+    dostupna BOOLEAN NOT NULL DEFAULT TRUE,
+    zanr TEXT
+);

@@ -1,0 +1,11 @@
+{
+  "knjige": [
+    { "isbn": "978-953-0-30001-1", "naziv": "Na Drini ćuprija", "cijena": 24.99, "dostupna": true, "zanr": "Roman" },
+    { "isbn": "978-953-0-30002-2", "naziv": "Alkemičar", "cijena": 18.50, "dostupna": true, "zanr": "Roman" },
+    { "isbn": "978-953-0-30003-3", "naziv": "Kratka povijest vremena", "cijena": 32.00, "dostupna": false, "zanr": "Znanost" }
+  ],
+  "narudzbe": [
+    { "broj_narudzbe": "NAR-1001", "isbn": "978-953-0-30001-1", "kolicina": 2 },
+    { "broj_narudzbe": "NAR-1002", "isbn": "978-953-0-30003-3", "kolicina": 5 }
+  ]
+}

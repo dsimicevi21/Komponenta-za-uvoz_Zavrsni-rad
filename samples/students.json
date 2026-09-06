@@ -1,0 +1,11 @@
+{
+  "students": [
+    { "first_name": "Ana", "last_name": "Anić", "email": "ana.anic@example.com", "year": 1 },
+    { "first_name": "Marko", "last_name": "Marković", "email": "marko.markovic@example.com", "year": 2 },
+    { "first_name": "Iva", "last_name": "Ivić", "email": "iva.ivic@example.com", "year": 3 }
+  ],
+  "courses": [
+    { "code": "UP1", "title": "Uvod u programiranje", "ects": 6 },
+    { "code": "BP2", "title": "Baze podataka", "ects": 5 }
+  ]
+}

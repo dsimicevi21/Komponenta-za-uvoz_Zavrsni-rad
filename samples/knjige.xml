@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <knjige>
+    <knjiga>
+      <isbn>978-953-0-30001-1</isbn>
+      <naziv>Na Drini ćuprija</naziv>
+      <cijena>24.99</cijena>
+      <dostupna>true</dostupna>
+      <zanr>Roman</zanr>
+    </knjiga>
+    <knjiga>
+      <isbn>978-953-0-30002-2</isbn>
+      <naziv>Alkemičar</naziv>
+      <cijena>18.50</cijena>
+      <dostupna>true</dostupna>
+      <zanr>Roman</zanr>
+    </knjiga>
+    <knjiga>
+      <isbn>978-953-0-30003-3</isbn>
+      <naziv>Kratka povijest vremena</naziv>
+      <cijena>32.00</cijena>
+      <dostupna>false</dostupna>
+      <zanr>Znanost</zanr>
+    </knjiga>
+  </knjige>
+  <narudzbe>
+    <narudzba>
+      <broj_narudzbe>NAR-1001</broj_narudzbe>
+      <isbn>978-953-0-30001-1</isbn>
+      <kolicina>2</kolicina>
+    </narudzba>
+    <narudzba>
+      <broj_narudzbe>NAR-1002</broj_narudzbe>
+      <isbn>978-953-0-30003-3</isbn>
+      <kolicina>5</kolicina>
+    </narudzba>
+  </narudzbe>
+</data>
