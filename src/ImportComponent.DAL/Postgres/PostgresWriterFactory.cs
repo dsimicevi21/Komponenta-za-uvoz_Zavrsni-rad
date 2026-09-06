@@ -8,7 +8,7 @@ using Npgsql;
 
 namespace ImportComponent.DAL.Postgres;
 
-internal class PostgresWriterFactory : IDataWriterFactory
+public sealed class PostgresWriterFactory : IDataWriterFactory
 {
     private readonly string _connectionString;
     public PostgresWriterFactory(string connectionString)
