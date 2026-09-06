@@ -53,7 +53,7 @@ public sealed class CsvDataReader : IDataReader
         using var reader = new StreamReader(source, encoding, leaveOpen: true);
         using var csv = new CsvReader(reader, config);
 
-        if (options.HasHeaderRow)
+        if (!options.HasHeaderRow)
         {
             while (csv.Read())
             {

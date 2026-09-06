@@ -22,7 +22,7 @@ public sealed class RecordValidator
             if (!hasValue)
             {
                 var canBeOmitted = column.IsNullable || column.HasDefault;
-                if (canBeOmitted)
+                if (!canBeOmitted)
                 {
                     return ValidationResult.Invalid($"Missing required value for column '{column.Name}'.");
                 }
@@ -66,7 +66,7 @@ public sealed class RecordValidator
             case "numeric":
             case "real":
             case "double precision":
-                if (double.TryParse(text, NumberStyles.Number | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out var decimalValue))
+                if (decimal.TryParse(text, NumberStyles.Number | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out var decimalValue))
                 {
                     coercedValue = decimalValue;
                     return true;

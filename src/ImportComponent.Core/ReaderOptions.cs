@@ -9,7 +9,7 @@ namespace ImportComponent.Core
     public sealed class ReaderOptions
     {
         public string? Delimiter { get; set; }
-        public string Encoding { get; set; }
+        public string Encoding { get; set; } = "utf-8";
         public bool HasHeaderRow { get; set; } = true;
         public string? EntityName { get; set; }
     }

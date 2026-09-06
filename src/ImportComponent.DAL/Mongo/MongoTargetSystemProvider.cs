@@ -18,7 +18,7 @@ public sealed class MongoTargetSystemProvider : ITargetSystemProvider
         _databaseName = databaseName;
     }
 
-    public string SystemId => "MongoDB";
+    public string SystemId => "mongodb";
 
     public ISchemaIntrospector CreateIntrospector() => new MongoSchemaIntrospector(_connectionString, _databaseName);
 

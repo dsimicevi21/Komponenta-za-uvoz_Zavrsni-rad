@@ -149,7 +149,7 @@ partial class Form1
 
         this._apiUrlTextBox.Location = new System.Drawing.Point(12, 48);
         this._apiUrlTextBox.Size = new System.Drawing.Size(220, 23);
-        this._apiUrlTextBox.Text = "http://localhost:5283";
+        this._apiUrlTextBox.Text = "http://localhost:5183";
 
         this._loadTargetsButton.Location = new System.Drawing.Point(240, 47);
         this._loadTargetsButton.Size = new System.Drawing.Size(104, 25);

@@ -12,10 +12,10 @@ builder.Services.AddSingleton<IDataReader, XmlDataReader>();
 builder.Services.AddSingleton<IDataReaderRegistry, DataReaderRegistry>();
 
 var postgresConnectionString = builder.Configuration.GetConnectionString("Postgres")
-    ?? "Host=localhost; POrt=5432;Username=postgres;Password=postgres;Database=Import_demo";
+    ?? "Host=localhost; Port=5432;Username=postgres;Password=postgres;Database=import_demo";
 var mongoConnectionString = builder.Configuration.GetConnectionString("Mongo")
     ?? "mongodb://localhost:27017";
-var mongoDatabaseName = builder.Configuration["MongoDatabaseName"] ?? "Import_demo";
+var mongoDatabaseName = builder.Configuration["MongoDatabaseName"] ?? "import_demo";
 
 builder.Services.AddSingleton<ITargetSystemProvider>(
     _ => new PostgresTargetSystemProvider(postgresConnectionString));

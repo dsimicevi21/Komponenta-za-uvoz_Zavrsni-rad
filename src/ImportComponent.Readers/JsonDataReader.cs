@@ -14,7 +14,7 @@ public sealed class JsonDataReader : IDataReader
 
     public bool CanHandle(string fileName, byte[] sample)
     {
-        if (fileName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+        if (!fileName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
         {
             return false;
         }
