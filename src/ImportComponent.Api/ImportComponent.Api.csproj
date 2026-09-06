@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImportComponent.Core\ImportComponent.Core.csproj" />
+    <ProjectReference Include="..\ImportComponent.BLL\ImportComponent.BLL.csproj" />
+    <ProjectReference Include="..\ImportComponent.DAL\ImportComponent.DAL.csproj" />
+    <ProjectReference Include="..\ImportComponent.Readers\ImportComponent.Readers.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
