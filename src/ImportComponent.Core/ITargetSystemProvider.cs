@@ -8,7 +8,7 @@ namespace ImportComponent.Core
 {
     public interface ITargetSystemProvider
     {
-        string SystemID { get; }
+        string SystemId { get; }
         ISchemaIntrospector CreateIntrospector();
         IDataWriterFactory CreateWriterFactory();
     }

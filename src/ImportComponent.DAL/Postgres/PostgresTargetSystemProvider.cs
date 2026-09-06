@@ -7,7 +7,7 @@ using ImportComponent.Core;
 
 namespace ImportComponent.DAL.Postgres;
 
-public sealed class PostgresTargetSystemProvider
+public sealed class PostgresTargetSystemProvider : ITargetSystemProvider
 {
     private readonly string _connectionString;
 

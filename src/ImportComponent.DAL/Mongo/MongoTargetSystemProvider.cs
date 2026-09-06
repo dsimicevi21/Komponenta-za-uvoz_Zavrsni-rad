@@ -7,7 +7,7 @@ using ImportComponent.Core;
 
 namespace ImportComponent.DAL.Mongo;
 
-internal class MongoTargetSystemProvider : ITargetSystemProvider
+public sealed class MongoTargetSystemProvider : ITargetSystemProvider
 {
     private readonly string _connectionString;
     private readonly string _databaseName;
@@ -18,7 +18,7 @@ internal class MongoTargetSystemProvider : ITargetSystemProvider
         _databaseName = databaseName;
     }
 
-    public string SystemID => "MongoDB";
+    public string SystemId => "MongoDB";
 
     public ISchemaIntrospector CreateIntrospector() => new MongoSchemaIntrospector(_connectionString, _databaseName);
 
