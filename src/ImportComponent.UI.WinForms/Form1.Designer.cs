@@ -1,9 +1,7 @@
 ﻿namespace ImportComponent.UI.WinForms;
 partial class Form1
 {
-    /// <summary>
-    ///  Required designer variable.
-    /// </summary>
+   
     private System.ComponentModel.IContainer components = null;
 
     private static readonly System.Drawing.Color AccentColor = System.Drawing.Color.FromArgb(37, 99, 235);
@@ -53,10 +51,7 @@ partial class Form1
 
     private System.Windows.Forms.Label _statusLabel;
 
-    /// <summary>
-    ///  Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
     protected override void Dispose(bool disposing)
     {
         if (disposing && (components != null))
@@ -68,10 +63,7 @@ partial class Form1
 
     #region Windows Form Designer generated code
 
-    /// <summary>
-    ///  Required method for Designer support - do not modify
-    ///  the contents of this method with the code editor.
-    /// </summary>
+ 
     private void InitializeComponent()
     {
         this.components = new System.ComponentModel.Container();
@@ -124,22 +116,19 @@ partial class Form1
         ((System.ComponentModel.ISupportInitialize)(this._stagedRecordsGrid)).BeginInit();
         this.SuspendLayout();
 
-        // _titleBar
         this._titleBar.BackColor = AccentColor;
         this._titleBar.Location = new System.Drawing.Point(0, 0);
         this._titleBar.Size = new System.Drawing.Size(1200, 52);
         this._titleBar.Anchor = ((AnchorStyles)((AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right)));
 
-        // _titleLabel
         this._titleLabel.AutoSize = true;
         this._titleLabel.ForeColor = System.Drawing.Color.White;
         this._titleLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
         this._titleLabel.Location = new System.Drawing.Point(20, 13);
-        this._titleLabel.Text = "Import Component — Demo klijent";
+        this._titleLabel.Text = "Import Component";
         this._titleBar.Controls.Add(this._titleLabel);
 
-        // _connectionGroup
-        this._connectionGroup.Text = "1. Spajanje na API";
+        this._connectionGroup.Text = "Spajanje na API";
         this._connectionGroup.Location = new System.Drawing.Point(12, 62);
         this._connectionGroup.Size = new System.Drawing.Size(360, 90);
 
@@ -160,8 +149,7 @@ partial class Form1
         this._connectionGroup.Controls.Add(this._apiUrlTextBox);
         this._connectionGroup.Controls.Add(this._loadTargetsButton);
 
-        // _targetGroup
-        this._targetGroup.Text = "2. Cilj";
+        this._targetGroup.Text = "Odabir ciljnog sustava i tablice";
         this._targetGroup.Location = new System.Drawing.Point(12, 160);
         this._targetGroup.Size = new System.Drawing.Size(360, 112);
 
@@ -188,8 +176,7 @@ partial class Form1
         this._targetGroup.Controls.Add(this._targetTableLabel);
         this._targetGroup.Controls.Add(this._targetTableCombo);
 
-        // _sourceGroup
-        this._sourceGroup.Text = "3. Izvorna datoteka";
+        this._sourceGroup.Text = "Odabir importa";
         this._sourceGroup.Location = new System.Drawing.Point(12, 280);
         this._sourceGroup.Size = new System.Drawing.Size(360, 118);
 
@@ -205,7 +192,7 @@ partial class Form1
 
         this._entityLabel.AutoSize = true;
         this._entityLabel.Location = new System.Drawing.Point(12, 65);
-        this._entityLabel.Text = "Entity:";
+        this._entityLabel.Text = "Skup:";
 
         this._entityCombo.DropDownStyle = ComboBoxStyle.DropDownList;
         this._entityCombo.Location = new System.Drawing.Point(100, 62);
@@ -217,10 +204,9 @@ partial class Form1
         this._sourceGroup.Controls.Add(this._entityLabel);
         this._sourceGroup.Controls.Add(this._entityCombo);
 
-        // _runButton
         this._runButton.Location = new System.Drawing.Point(12, 410);
         this._runButton.Size = new System.Drawing.Size(360, 38);
-        this._runButton.Text = "▶  Run to staging";
+        this._runButton.Text = "Run to staging";
         this._runButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
         this._runButton.BackColor = AccentColor;
         this._runButton.ForeColor = System.Drawing.Color.White;
@@ -228,23 +214,20 @@ partial class Form1
         this._runButton.FlatAppearance.BorderSize = 0;
         this._runButton.Click += new System.EventHandler(this.RunButton_Click);
 
-        // _confirmButton
         this._confirmButton.Location = new System.Drawing.Point(12, 458);
         this._confirmButton.Size = new System.Drawing.Size(174, 32);
-        this._confirmButton.Text = "✓ Confirm (commit)";
+        this._confirmButton.Text = "Confirm";
         this._confirmButton.Enabled = false;
         this._confirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
 
-        // _discardButton
         this._discardButton.Location = new System.Drawing.Point(198, 458);
         this._discardButton.Size = new System.Drawing.Size(174, 32);
-        this._discardButton.Text = "✕ Discard";
+        this._discardButton.Text = "Discard";
         this._discardButton.Enabled = false;
         this._discardButton.Click += new System.EventHandler(this.DiscardButton_Click);
 
-        // _resetGroup - demo/testing convenience only, deliberately separate from the
-        // real import flow above (see DevResetService.cs).
-        this._resetGroup.Text = "Reset za demo (samo testiranje)";
+        
+        this._resetGroup.Text = "Reset baze za testiranje";
         this._resetGroup.Location = new System.Drawing.Point(12, 500);
         this._resetGroup.Size = new System.Drawing.Size(360, 158);
 
@@ -267,7 +250,7 @@ partial class Form1
 
         this._resetButton.Location = new System.Drawing.Point(12, 106);
         this._resetButton.Size = new System.Drawing.Size(332, 32);
-        this._resetButton.Text = "⟲ Reset table to demo defaults";
+        this._resetButton.Text = "Reset na testne vrijednosti";
         this._resetButton.BackColor = System.Drawing.Color.FromArgb(217, 119, 6);
         this._resetButton.ForeColor = System.Drawing.Color.White;
         this._resetButton.FlatStyle = FlatStyle.Flat;
@@ -280,18 +263,15 @@ partial class Form1
         this._resetGroup.Controls.Add(this._resetTargetTableCombo);
         this._resetGroup.Controls.Add(this._resetButton);
 
-        // _sourceFieldColumn
         this._sourceFieldColumn.HeaderText = "Source field";
         this._sourceFieldColumn.Name = "SourceField";
         this._sourceFieldColumn.ReadOnly = true;
         this._sourceFieldColumn.Width = 200;
 
-        // _targetColumnColumn
         this._targetColumnColumn.HeaderText = "Target column";
         this._targetColumnColumn.Name = "TargetColumn";
         this._targetColumnColumn.Width = 200;
 
-        // _mappingGrid
         this._mappingGrid.AllowUserToAddRows = false;
         this._mappingGrid.AllowUserToDeleteRows = false;
         this._mappingGrid.AutoGenerateColumns = false;
@@ -303,14 +283,12 @@ partial class Form1
         this._mappingGrid.RowHeadersVisible = false;
         this._mappingGrid.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) | AnchorStyles.Left) | AnchorStyles.Right)));
 
-        // _mappingGroup
-        this._mappingGroup.Text = "4. Mapiranje polja (auto-predloženo, može se ručno prilagoditi)";
+        this._mappingGroup.Text = "Mapiranje polja";
         this._mappingGroup.Location = new System.Drawing.Point(386, 62);
         this._mappingGroup.Size = new System.Drawing.Size(798, 190);
         this._mappingGroup.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right))));
         this._mappingGroup.Controls.Add(this._mappingGrid);
 
-        // _stagedRecordsGrid
         this._stagedRecordsGrid.AllowUserToAddRows = false;
         this._stagedRecordsGrid.AllowUserToDeleteRows = false;
         this._stagedRecordsGrid.ReadOnly = true;
@@ -320,14 +298,12 @@ partial class Form1
         this._stagedRecordsGrid.AllowUserToResizeRows = false;
         this._stagedRecordsGrid.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) | AnchorStyles.Left) | AnchorStyles.Right)));
 
-        // _stagedGroup
-        this._stagedGroup.Text = "5. Uvezeni podaci (stvarno upisano u staging) - usporedi s pgAdmin/Compass";
+        this._stagedGroup.Text = "Uvezeni podaci";
         this._stagedGroup.Location = new System.Drawing.Point(386, 260);
         this._stagedGroup.Size = new System.Drawing.Size(798, 290);
         this._stagedGroup.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) | AnchorStyles.Left) | AnchorStyles.Right)));
         this._stagedGroup.Controls.Add(this._stagedRecordsGrid);
 
-        // _resultTextBox
         this._resultTextBox.Location = new System.Drawing.Point(10, 22);
         this._resultTextBox.Size = new System.Drawing.Size(778, 108);
         this._resultTextBox.Multiline = true;
@@ -335,26 +311,23 @@ partial class Form1
         this._resultTextBox.ScrollBars = ScrollBars.Vertical;
         this._resultTextBox.Anchor = ((AnchorStyles)((((AnchorStyles.Bottom | AnchorStyles.Left) | AnchorStyles.Right))));
 
-        // _logGroup
-        this._logGroup.Text = "6. Zapisnik (odbačeni zapisi, potvrda/odustajanje)";
+        this._logGroup.Text = "Rezultati";
         this._logGroup.Location = new System.Drawing.Point(386, 560);
         this._logGroup.Size = new System.Drawing.Size(798, 140);
         this._logGroup.Anchor = ((AnchorStyles)((((AnchorStyles.Bottom | AnchorStyles.Left) | AnchorStyles.Right))));
         this._logGroup.Controls.Add(this._resultTextBox);
 
-        // _statusLabel
         this._statusLabel.AutoSize = false;
         this._statusLabel.Location = new System.Drawing.Point(12, 710);
         this._statusLabel.Size = new System.Drawing.Size(1172, 26);
         this._statusLabel.ForeColor = System.Drawing.Color.DimGray;
         this._statusLabel.Anchor = ((AnchorStyles)((((AnchorStyles.Bottom | AnchorStyles.Left) | AnchorStyles.Right))));
 
-        // Form1
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.BackColor = PageBackColor;
         this.ClientSize = new System.Drawing.Size(1200, 748);
         this.MinimumSize = new System.Drawing.Size(1000, 600);
-        this.Text = "Import Component - Demo klijent";
+        this.Text = "Import Component";
         this.Controls.Add(this._titleBar);
         this.Controls.Add(this._connectionGroup);
         this.Controls.Add(this._targetGroup);

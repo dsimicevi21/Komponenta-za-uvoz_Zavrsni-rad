@@ -1,8 +1,11 @@
-﻿using ImportComponent.Api;
+﻿using System.Runtime.InteropServices;
+using ImportComponent.Api;
 using ImportComponent.Core;
 using ImportComponent.DAL.Mongo;
 using ImportComponent.DAL.Postgres;
 using ImportComponent.Readers;
+
+FreeConsole();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,3 +51,6 @@ app.UseHttpsRedirection();
 app.MapImportEndpoints();
 
 app.Run();
+
+[DllImport("kernel32.dll")]
+static extern bool FreeConsole();
