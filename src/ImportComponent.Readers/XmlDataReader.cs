@@ -23,7 +23,7 @@ public sealed class XmlDataReader : IDataReader
         var trimmed = Encoding.UTF8.GetString(sample).TrimStart();
         return trimmed.StartsWith("<");
     }
-    public SourceSchema InspectStructure(Stream source)
+    public SourceSchema InspectStructure(Stream source, string? entityName = null)
     {
         var document = XDocument.Load(source);
         var root = document.Root;
@@ -31,24 +31,21 @@ public sealed class XmlDataReader : IDataReader
         {
             return new SourceSchema();
         }
+
         var rootChildren = root.Elements().ToList();
         if (IsHomogenous(rootChildren))
         {
-            return new SourceSchema
-            {
-                FieldNames = FIeldNamesOf(rootChildren.FirstOrDefault()),
-                EntityNames = new[] {"default"},
-            };
+            return new SourceSchema { FieldNames = FIeldNamesOf(rootChildren.FirstOrDefault()), EntityNames = new[] { "default" } };
         }
 
         var entityNames = rootChildren.Select(e => e.Name.LocalName).ToArray();
-        var firstItem = rootChildren.FirstOrDefault()?.Elements().FirstOrDefault();
+        var targetName = !string.IsNullOrEmpty(entityName) && entityNames.Contains(entityName)
+            ? entityName
+            : entityNames.FirstOrDefault();
 
-        return new SourceSchema
-        {
-            FieldNames = FIeldNamesOf(firstItem),
-            EntityNames = entityNames,
-        };
+        var firstItem = rootChildren.FirstOrDefault(e => e.Name.LocalName == targetName)?.Elements().FirstOrDefault();
+
+        return new SourceSchema { FieldNames = FIeldNamesOf(firstItem), EntityNames = entityNames };
     }
 
     private static bool IsHomogenous(IReadOnlyCollection<XElement> elements)=>

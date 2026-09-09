@@ -11,7 +11,7 @@ namespace ImportComponent.Core
     {
         string FormatId { get; }
         bool CanHandle(string fileName, byte[] sample);
-        SourceSchema InspectStructure(Stream source);
+        SourceSchema InspectStructure(Stream source, string? entityName = null);
 
         IEnumerable<Record> ReadAll(Stream source, ReaderOptions options);
     }

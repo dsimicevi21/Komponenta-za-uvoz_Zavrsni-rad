@@ -32,11 +32,15 @@ public sealed class ApiClient : IDisposable
         return await response.Content.ReadFromJsonAsync<List<ColumnDto>>(JsonOptions) ?? new();
     }
 
-    public async Task<InspectResultDto> InspectAsync(string filePath)
+    public async Task<InspectResultDto> InspectAsync(string filePath, string? entityName = null)
     {
         using var content = new MultipartFormDataContent();
         using var fileStream = File.OpenRead(filePath);
         content.Add(new StreamContent(fileStream), "file", Path.GetFileName(filePath));
+        if (!string.IsNullOrEmpty(entityName))
+        {
+            content.Add(new StringContent(entityName), "entityName");
+        }
 
         using var response = await _http.PostAsync("/api/imports/inspect", content);
         await EnsureSuccessAsync(response);

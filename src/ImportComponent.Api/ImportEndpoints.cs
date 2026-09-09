@@ -61,6 +61,7 @@ public static class ImportEndpoints
                     return Results.BadRequest("Missing 'file' part.");
                 }
 
+                var entityName = form["entityName"].ToString();
                 var sample = await ReadSampleAsync(file);
                 var reader = readerRegistry.FindReader(file.FileName, sample);
                 if (reader is null)
@@ -69,7 +70,7 @@ public static class ImportEndpoints
                 }
 
                 await using var stream = file.OpenReadStream();
-                var schema = reader.InspectStructure(stream);
+                var schema = reader.InspectStructure(stream, string.IsNullOrWhiteSpace(entityName) ? null : entityName);
 
                 return Results.Ok(new InspectResultDto(reader.FormatId, schema.FieldNames, schema.EntityNames));
             });

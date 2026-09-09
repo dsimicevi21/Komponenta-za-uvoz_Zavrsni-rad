@@ -25,7 +25,7 @@ public sealed class CsvDataReader : IDataReader
         return firstLine.Contains(",") || firstLine.Contains(";");
     }
 
-    public SourceSchema InspectStructure(Stream source)
+    public SourceSchema InspectStructure(Stream source, string? entityName = null)
     {
         using var reader = new StreamReader(source, leaveOpen: true);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);

@@ -23,7 +23,7 @@ public sealed class JsonDataReader : IDataReader
         return trimmed.Length > 0 && (trimmed[0] == '{' || trimmed[0] == '[');
     }
 
-    public SourceSchema InspectStructure(Stream source)
+    public SourceSchema InspectStructure(Stream source, string? entityName = null)
     {
         using var document = JsonDocument.Parse(source);
         var root = document.RootElement;
@@ -44,14 +44,19 @@ public sealed class JsonDataReader : IDataReader
                 .Select(p => p.Name)
                 .ToArray();
 
-            var firstArray = entityNames.Length > 0 ? root.GetProperty(entityNames[0]) : default;
+            var targetEntity = !string.IsNullOrEmpty(entityName) && entityNames.Contains(entityName)
+            ? entityName
+            : entityNames.FirstOrDefault();
+
+            var targetArray = targetEntity is not null ? root.GetProperty(targetEntity) : default;
 
             return new SourceSchema
             {
-                FieldNames = entityNames.Length > 0 ? FirstObjectFieldNames(firstArray) : Array.Empty<string>(),
+                FieldNames = targetEntity is not null ? FirstObjectFieldNames(targetArray) : Array.Empty<string>(),
                 EntityNames = entityNames,
             };
         }
+
         return new SourceSchema();
     }
 

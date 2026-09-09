@@ -216,8 +216,24 @@ public partial class Form1 : Form
         }
     }
 
-    private void EntityCombo_SelectedIndexChanged(object? sender, EventArgs e)
+    private async void EntityCombo_SelectedIndexChanged(object? sender, EventArgs e)
     {
+        if (_apiClient is null || _selectedFilePath is null || _entityCombo.SelectedItem is not string entityName)
+        {
+            return;
+        }
+
+        try
+        {
+            SetStatus("Re-inspecting file for selected entity...", isError: false);
+            var inspectResult = await _apiClient.InspectAsync(_selectedFilePath, entityName);
+            _sourceFieldNames = inspectResult.FieldNames;
+            await RefreshMappingGridAsync();
+        }
+        catch (Exception ex)
+        {
+            SetStatus($"Failed to inspect entity: {ex.Message}", isError: true);
+        }
     }
 
     private async Task RefreshMappingGridAsync()
