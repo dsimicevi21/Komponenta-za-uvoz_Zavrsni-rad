@@ -144,4 +144,20 @@ public class RecordValidatorTests
         Assert.True(result.IsValid);
         Assert.Equal(19.99m, result.Record!["price"]);
     }
+
+    [Fact]
+    public void Validate_NumericColumn_IntegerValueFromJson_StillCoerces()
+    {
+        var validator = new RecordValidator();
+        var record = new Record { ["price"] = 12L };
+        var columns = new List<ColumnInfo>
+        {
+            new() { Name = "price", DataType = "numeric", IsNullable = false },
+        };
+
+        var result = validator.Validate(record, columns);
+
+        Assert.True(result.IsValid);
+        Assert.Equal(12m, result.Record!["price"]);
+    }
 }
